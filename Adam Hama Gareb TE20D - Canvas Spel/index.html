@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<html>
+
+   <!--Style tag with a reset code to fix the display of the game-->
+   <style>
+      body {
+         margin: 0;
+         background: black;
+      }  
+   </style>
+
+
+<!--This is a div for the scoreboard on the top left part of screen. we add a class where we make
+the text white with text-white, adjust the margin with ml and mt and use select-none so the score
+cannot get highlighted  -->
+<!--There also is an id to the other span tag labeled 'scoreEl' which will be used with the javascript later-->
+<div class="fixed text-white ml-2 mt-1 select-none"><span>Score: </span><span id="scoreEl">0</span></div>
+
+<!--Div class for Start Game screen when you get hit by enemy, including score and button to restart-->
+<!--We do further adjusting with justify-center, items-center and add a flex function as well-->
+<div class="fixed inset-0 flex items-center justify-center" id="modalEl">
+   <!--Div class for making background green, adjusting width with max-w-md and w-full and adding
+   some padding as well. We put all text in the middle with text-center-->
+   <div class="bg-green-500 max-w-md w-full p-6 text-center">
+      <!--This p tag displays the name of the game, and has a font-bold added to it with margin
+      to separate from points score-->
+      <p class="font-bold mb-2">Zombie Shootz: The Game</p>
+      <!--H1 tag which is a 'header' type text, which gets larger in size with text-4xl and making
+      font bold with font-bold-->
+      <h1 class="text-4xl font-bold leading-none" id="bigScoreEl">0</h1>
+      <!--Paragraph text where we put 'points' text underneath the score, we make the text a little
+      smaller with text-sm and make it gray color with text-gray. We add a margin bottom with mb
+      to make a little space from button-->
+      <p class="text-sm text-gray-700 mb-2">Points</p>
+      <div>
+         <!--Button tag for 'Start Game' button. We make the background blue with white text.
+         here we also add some width but also add padding for top and bottom-->
+         <!--We have an id attached with startGameBtn to be able to start game with this button-->
+         <button class="bg-blue-500 text-white w-full py-3" id="startGameBtn">Start Game</button>
+      </div>
+   </div>
+
+</div>
+
+<canvas></canvas>
+
+<script src="./index.js">
+</script>
+
+</html>
